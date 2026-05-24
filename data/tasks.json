@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "Write tests",
+    "description": "Add unit tests for TaskManager",
+    "priority": "medium",
+    "effort_hours": 2.0,
+    "status": "pending",
+    "assigned_to": "Bob"
+  },
+  {
+    "id": 2,
+    "title": "Write tests",
+    "description": "Add unit tests for TaskManager",
+    "priority": "medium",
+    "effort_hours": 2.0,
+    "status": "pending",
+    "assigned_to": "James"
+  },
+  {
+    "id": 3,
+    "title": "Write tests",
+    "description": "Add unit tests for TaskManager",
+    "priority": "medium",
+    "effort_hours": 2.0,
+    "status": "pending",
+    "assigned_to": "James"
+  }
+]
