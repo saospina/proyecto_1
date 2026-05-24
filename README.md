@@ -54,6 +54,28 @@ The API runs at **http://127.0.0.1:5000**.
 
 Swagger documentation is available at **http://127.0.0.1:5000/apidocs/**.
 
+### Production (Gunicorn)
+
+For production or deployment, use Gunicorn instead of Flask's built-in server:
+
+```bash
+gunicorn --bind 0.0.0.0:8000 run:app
+```
+
+## Deploying on Render
+
+Create a **Web Service** with these settings:
+
+| Setting | Value |
+|---------|-------|
+| Runtime | Python 3 |
+| Build Command | `pip install -r requirements.txt` |
+| Start Command | `gunicorn --bind 0.0.0.0:$PORT run:app` |
+
+Render sets the `$PORT` environment variable automatically. After deploy, the API will be available at your Render URL (e.g. `https://your-service.onrender.com/tasks`).
+
+> **Note:** On Render, the filesystem is ephemeral. Data in `data/tasks.json` may be lost on redeploys unless you add persistent storage.
+
 ## Project Structure
 
 ```
@@ -195,3 +217,4 @@ Example stored record:
 
 - [Flask](https://flask.palletsprojects.com/) — web framework
 - [Flasgger](https://github.com/flasgger/flasgger) — Swagger/OpenAPI documentation
+- [Gunicorn](https://gunicorn.org/) — production WSGI server
